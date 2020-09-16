@@ -19,5 +19,5 @@ script:
   - docker tag simple-node aronanubhav/simple-node:latest
 
 after_success:
-  - echo Covid@2020 | docker login -u aronanubhav --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push aronanubhav/simple-node
